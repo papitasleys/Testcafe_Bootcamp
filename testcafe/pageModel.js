@@ -13,12 +13,12 @@ class Page {
         this.textRetrieveResult = Selector('#content')
 
         //practoca 4
-        this.linkCheckboxes('a').withText('Checkboxes');
+        this.linkCheckboxes = Selector('a').withText('Checkboxes');
         //checkbox padre
-        this.listCheckboxParent('#checkboxes');
+        this.listCheckboxParent= Selector('#checkboxes');
         //checkbox hijos
-        this.checkboxFirst('#checkboxes > input[type=checkbox]:nth-child(1)');
-        this.checkboxSecond('#checkboxes > input[type=checkbox]:nth-child(3)');
+        this.checkboxFirst = Selector('#checkboxes > input[type=checkbox]:nth-child(1)');
+        this.checkboxSecond= Selector('#checkboxes > input[type=checkbox]:nth-child(3)');
     }
 }
 

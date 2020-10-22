@@ -2,7 +2,7 @@
     practica numero 2
 */
 
-import { assert } from console
+import { assert } from 'console';
 import { selector } from 'testcafe';
 import page from './pageModel';
 
@@ -18,6 +18,6 @@ test('Probar dar click en el enlace', async (t) => {
     } else {
         console.log('test failed');
         await t
-            .expect (page.text21.innerText).contains('A/B Test Control')
+            .expect (true).notOK();
     }
 })

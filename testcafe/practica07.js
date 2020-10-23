@@ -24,11 +24,16 @@ test('Proba de formulario', async t => {
         .click(page.radiobuttonGradSchool)
         .expect(page.radiobuttonGradSchool.checked).ok()
         .click(page.checkboxMale)
+        .expect(page.checkboxMale.checked).ok()
         .click(page.checkboxFemale)
+        .expect(page.checkboxFemale.checked).ok()
         .click(page.checkboxNotSay)
+        .expect(page.checkboxNotSay.checked).ok()
         .click(page.selectExperience)
         .click(page.optionExperience)
+        .expect(page.selectExperience.value).containts('10')
         .typeText(page.datepickerDate, '01012020', {speed : 0.5} )
+        .expect(page.datepickerDate.value).containts('2020')
         .click(page.buttonSubmitForm)
 
     await t

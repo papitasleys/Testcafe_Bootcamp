@@ -31,4 +31,16 @@ test('probaras boton romover', async t => {
         .expect(page.baseButtonRemove.nth(0).visible).notOk()
 });
 
-// tarea hacer mas pruebas
+
+test('agregar varios', async t => {
+    await t
+        .click(page.linkRemoveElements)
+    
+    for (let index = 0; index < 5; index++) {
+        await t
+            .click(page.buttonAddElement, {speed : 0.5})        
+    }
+
+    await t /* button with index 4 is present */
+        .expect(page.baseButtonRemove.nth(4).visible).ok()
+});

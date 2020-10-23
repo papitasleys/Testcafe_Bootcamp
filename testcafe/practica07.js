@@ -31,9 +31,9 @@ test('Proba de formulario', async t => {
         .expect(page.checkboxNotSay.checked).ok()
         .click(page.selectExperience)
         .click(page.optionExperience)
-        .expect(page.selectExperience.value).containts('10')
+        .expect(page.selectExperience.value).eql('4')
         .typeText(page.datepickerDate, '01012020', {speed : 0.5} )
-        .expect(page.datepickerDate.value).containts('2020')
+        .expect(page.datepickerDate.value).contains('2020')
         .click(page.buttonSubmitForm)
 
     await t

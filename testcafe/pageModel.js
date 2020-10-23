@@ -11,6 +11,7 @@ class Page {
         this.inputEmail = Selector('#email')
         this.buttonRetrievePassword = Selector('#form_submit')
         this.textRetrieveResult = Selector('#content')
+        this.textServerError = Selector('h1').withText('Internal Server Error')
 
         //practoca 4
         this.linkCheckboxes = Selector('a').withText('Checkboxes')

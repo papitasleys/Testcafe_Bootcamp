@@ -19,3 +19,14 @@ test('Probar formulario de recuperación', async t => {
     await t
         .expect(page.textRetrieveResult.innerText).contains('sent', 'prueba exitosa')
 })
+
+test('Prubea negativa >:/ de forgot password ', async t => {
+    await t
+        .click(page.linkForgotPassword)
+
+    await t
+        .click(page.buttonRetrievePassword)
+
+    await t
+        .expect(page.textServerError.visible).ok()
+})

@@ -12,9 +12,9 @@ test('probaras boton agregar', async t => {
         .click(page.linkRemoveElements)
     
     await t
-        .expect(page.baseRemoveElements.nth(0).visible).notOk()
+        .expect(page.baseButtonRemove.nth(0).visible).notOk()
         .click(page.buttonAddElement)
-        .expect(page.baseRemoveElements.nth(0).visible).ok()
+        .expect(page.baseButtonRemove.nth(0).visible).ok()
 });
 
 test('probaras boton romover', async t => {
@@ -22,11 +22,13 @@ test('probaras boton romover', async t => {
         .click(page.linkRemoveElements)
     
     await t
-        .click(page.buttonAddElement)
+        .click(page.buttonAddElement, {speed : 0.5})
     
     await t
-        .click(page.baseRemoveElements.nth(0))
-        .expect(page.baseRemoveElements.nth(0).visible).notOk()
+        .click(page.baseButtonRemove.nth(0), {speed : 0.5})
+    
+    await t
+        .expect(page.baseButtonRemove.nth(0).visible).notOk()
 });
 
 // tarea hacer mas pruebas

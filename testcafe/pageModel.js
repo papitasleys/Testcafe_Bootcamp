@@ -33,7 +33,33 @@ class Page {
         //parctica 6
         this.linkRemoveElements = Selector('a').withText('Add/Remove Elements')
         this.buttonAddElement = Selector('#content > div > button')
-        this.baseRemoveElements = Selector('#elements')
+        this.baseButtonRemove = Selector('#elements >  button[class=added-manually]')
+
+        //platica 7
+        this.inputFirstName = Selector('#first-name');
+        this.inputLastName = Selector('#last-name');
+        this.inputJobTitle = Selector('#job-title');
+        this.radiobuttonHighSchool= Selector('#radio-button-1');
+        this.radiobuttonCollege = Selector('#radio-button-2');
+        this.radiobuttonGradSchool = Selector('#radio-button-3');
+        this.checkboxMale = Selector('#checkbox-1');
+        this.checkboxFemale = Selector('#checkbox-2');
+        this.checkboxNotSay = Selector('#checkbox-3');
+        this.selectExperience = Selector('#select-menu');
+        this.optionExperience = Selector('#select-menu > option:nth-child(5)');
+        this.datepickerDate = Selector('#datepicker');
+        this.buttonSubmitForm = Selector('body > div > form > div > div:nth-child(15) > a');
+        this.textSubmitTitle = Selector('h1').withText('Thanks for submitting your form');
+
+        // pratcaca 8 (login)
+
+        //practica 9 
+        this.linkKeyPress = Selector('a').withText('Key Presses');
+        this.textKeyPressResult = Selector('#result');
+
+        //practica 10
+        this.linkContextMenu = Selector('a').withText('Context Menu');
+        this.hotspotPopo = Selector('#hot-spot');
     }
 }
 

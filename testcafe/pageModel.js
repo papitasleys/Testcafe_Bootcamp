@@ -61,6 +61,11 @@ class Page {
         //practica 10
         this.linkContextMenu = Selector('a').withText('Context Menu');
         this.hotspotPopo = Selector('#hot-spot');
+
+        //practica11
+        this.linkSlider = Selector ('a').withText('Horizontal Slider');
+        this.sliderMain = Selector('#content > div > div > input[type=range]');
+        this.rangeValue = Selector('#range');
     }
 }
 

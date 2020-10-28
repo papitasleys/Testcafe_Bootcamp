@@ -40,6 +40,14 @@ Simple way to run it its just:
 
     testcafe [browser --[options]] [your script]
 
+Run without User Interface (headless mode)
+
+    testcafe [browser:headless] [yout script]
+
+Run an specific test
+
+    testcafe [browser] [your script] -t [your test]
+
 
 
 

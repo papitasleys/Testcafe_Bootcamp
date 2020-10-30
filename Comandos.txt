@@ -1,0 +1,73 @@
+  651  ls
+  652  testcafe chrome -d miCuenta_Example.js
+  653  testcafe chrome -d miCuenta_Example.js -t "Crear una cuenta"
+  654  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" -d
+  655  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" --speed 1.1
+  656  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" --speed 0.1
+  657  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" --speed 1
+  658  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" --speed 0.30
+  659  ls
+  660  mkdir Screen
+  661  mkdir screenshot
+  662  ls
+  663  rm -rf Screen/º
+  664  ls
+  665  rm -rf Screen/
+  666  clear
+  667  ls
+  668  ls
+  669  testcafe chrome miCuenta_Example.js -s screenshot/
+  670  testcafe chrome miCuenta_Example.js -s screenshot/ -t "Crear una cuenta"
+  671  testcafe chrome miCuenta_Example.js:headless -s screenshot/ -t "Crear una cuenta"
+  672  testcafe chrome:headless miCuenta_Example.js -s screenshot/ -t "Crear una cuenta"
+  673  testcafe chrome:headless miCuenta_Example.js -s screenshot/ -t "Crear una cuenta"
+  674  testcafe chrome:headless miCuenta_Example.js -t "Crear una cuenta"
+  675  testcafe chrome:headless miCuenta_Example.js -t "Crear una cuenta" --disable-screenshots
+  676  testcafe chrome:headless miCuenta_Example.js -t "Crear una cuenta" -s fullPage=true
+  677  testcafe chrome:headless miCuenta_Example.js -t "Crear una cuenta" -s fullPage=true
+  678  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" -s fullPage=true
+  679  testcafe chrome miCuenta_Example.js -t "Crear una cuenta" --screenshots-on-fails
+  680  brew install ffmpeg
+  681  ls
+  682  mkdir Videos
+  683  ls
+  684  clear
+  685  brew list
+  686  testcafe chrome miCuenta_Example.js --video Video
+  687  testcafe chrome miCuenta_Example.js --video Video/
+  688  history
+  689  ls
+  690  testcafe chrome:headless miCuenta_Example.js
+  691  npm install -g testcafe-reporter-html@latest
+  692  npm install -g testcafe-reporter-html@latest --reporter html:reportes/reporte.html
+  693  mkdir reportes
+  694  npm install -g testcafe-reporter-html@latest --reporter html:reportes/reporte.html
+  695  testcafe chrome:headless miCuenta_Example.js  --reporter html:reportes/reporte.html
+  696  ls
+  697  clear
+  698  testcafe chrome,firefox:headless miCuenta_Example.js  --reporter html:reportes/reporte.html
+  699  testcafe -b
+  700  testcafe chrome,firefox,safari miCuenta_Example.js
+  701  testcafe chrome,firefox miCuenta_Example.js
+  702  testcafe -c chrome:headless miCuenta_Example.js
+  703  testcafe -c 2 chrome:headless miCuenta_Example.js
+  704  testcafe -c 5 chrome:headless miCuenta_Example.js
+  705  testcafe -c 2 chrome:headless miCuenta_Example.js -f "Pruebas de modulo mi cuenta"
+  706  testcafe -c 2 "chrome -private" miCuenta_Example.js
+  707  testcafe remote miCuenta_Example.js
+  708  testcafe remote miCuenta_Example.js --qr-code
+  709  history
+  710  testcafe remote miCuenta_Example.js
+  711  clear
+  712  testcafe "chrome:emulation:device=iphone X" miCuenta_Example.js
+  713  testcafe "chrome:emulation:device=ipad" miCuenta_Example.js
+  714  testcafe "chrome:emulation:device=galaxy fold" miCuenta_Example.js
+  715  testcafe "chrome:emulation:device=gaGaxy foFold" miCuenta_Example.js
+  716  testcafe "chrome:emulation:device=Galaxy Fold" miCuenta_Example.js
+  717  testcafe "chrome:emulation:device=Galaxy S5" miCuenta_Example.js
+  718  testcafe "chrome:emulation:device=Galaxy Fold" miCuenta_Example.js
+  719  testcafe "chrome:emulation:width=640;height=360;mobile=true;orientation=vertical;touch=true" miCuenta_Example.js
+  720  testcafe "chrome:emulation:width=100;height=100;mobile=true;orientation=vertical;touch=true" miCuenta_Example.js
+  721  testcafe "chrome:emulation:width=100;height=200;mobile=true;orientation=horizontal;touch=true" miCuenta_Example.js
+  722  testcafe "chrome --start-fullscreen" miCuenta_Example.js
+  723  testcafe chrome miCuenta_Example.js -L

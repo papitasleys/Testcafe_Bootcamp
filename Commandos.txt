@@ -1,0 +1,134 @@
+Para hacer el debuggeo usaremos la siguiente funcion
+$ testcafe chrome -d mi_Cuenta.js
+
+Ejecutar haciendo un debugeo nos apareceran tres botones en pantalla "Unlock Page", "Resume" y "Next Action"
+	"Unlock Page" sirve apra desbloquear la pagina y podemos entonces usar el boton derecho, inspeccionar la pagina, etc.
+	"Resume" ejecuta todos los pasos que siguen despues de que hayamos hecho click en "Unlocked Page"
+	"Next Action" es para ir de step en step
+
+Hay una forma de hacer "checkpoints" y es usando la instruccion
+t.debug() siempre debe llevar un await antes y estar referenciando al objeto "t"
+
+.setTestSpeed(.1) hace que el script a partir de este punto se ejecute lento
+
+Para hacer debug de una sola prueba usamos el siguiente comando
+$ testcafe chrome -d mi_Cuenta.js -t "NOMBRE DE LA PRUEBA A EJECUTAR"
+
+tambien se pueden poner los opciones al final, todas juntas
+$ testcafe chrome mi_Cuenta.js -d -t "NOMBRE DE LA PRUEBA A EJECUTAR"
+
+Si queremos ejecutar la prueba con velocidad reducida, la velocidad va desde 0.1 - 1 donde 1 es velocidad normal y .2 es el veinte por ciento
+$ testcafe chrome miCuenta_Example.js -t "NOMBRE DE LA PRUEBA A EJECUTAR" --speed 0.1
+
+$ testcafe firefox mi_Cuenta.js -d -t "Crear una cuenta"
+
+control C sirve para parar una ejecucion
+
+para tomar un screenshot
+takeLementScreenshot(page.email)
+.takeScreenshot()
+
+-s screenshot/ es para decirle que los screenshots los vaya a guardar en ese folder
+$ testcafe chrome:headless mi_Cuenta.js -s screenshot/ -t "Crear una cuenta"
+
+si no ponemos el -s screenshot/ de todas formas los tomara pero los guardara en el directorio raiz
+testcafe chrome:headless mi_Cuenta.js -t "Crear una cuenta"
+
+si queremos que no tome los screenshits hay que agregar la siguente parte en la instruccion
+--disable-screenshots
+
+si queremos que tome toda la pagina en el screenshot
+-s fullPage=true
+
+esta instruccion es para tomar un screenshot donde se presente una falla
+--screenshots-on-fails
+
+-s takeOnFails=true
+
+
+$ testcafe chrome:headless mi_Cuenta.js -t "Crear una cuenta" --screenshots-on-fails
+
+.maximizeWindow()
+
+
+-------------------------------
+Para poder tomar video se ocupan tener un par de librerias instaladas
+
+se pueden instalar en Mac o linux usando unos de estos dos comandos
+$ brew install ffmpeg
+$ npm install -g --save @ffmpeg-installer/ffmpeg
+
+Para instañar en windows podemos usar este comando
+$ npm install -g --save @ffmpeg-installer/ffmpeg
+
+se ocupa tener un directorio donde se guarden los videos en especifico
+para mostrar la lista de elementos instalados en MAc y verificar si esta el ffmpeg, podemos ejecutar lo siguiente
+$ brew list
+
+El comando para ejecutar la grabacion de video hay que ejecutar asi (pero tomara video de todas las preubas)
+$ tetscafe chrome mi_Cuenta.js --video Video
+
+testcafe chrome mi_Cuenta.js --video video -t "Crear una cuenta"
+
+
+
+
+
+REPORTES
+Para poder trabajar con reportes se ocupa ejecutar el siguiente comando para instalar el reporter
+$ npm install -g testcafe-reporter-html@latest
+
+no hay que olvidar crea una carpeta donde almacenaremos los reportes
+$ mkdir reportes
+
+Para ejecutar un archivo con el reporte, se usa la sigueitne instruccion
+$testcafe chrome:headless mi_Cuenta.js -- reporter html:reportes/reporte.html
+
+Para ver la lista de navegadores instalados, ejecutamos la instruccion siguiente
+$ testcafe -b
+
+si queremos ejecutar en multiples navegadores, podemos poner lo siguiente, no hay limite para la cantidad de navegadores a usar, salvo las capacidades de la maquina
+$ testcafe chrome,firefox: mi_Cuenta.js --reporter html:reportes/reporte.html
+
+Si queremos que se ejecute una prueba en dos navegadores usamos concurrencia, unas pruebas van a un navegador y otras van a otro navegador, el factor despues del -c debeser 1 o mayor, el numero de concurrentes va atado al equipo que tengamos
+$ testcafe -c 2 chrome:headless mi_Cuenta.js
+
+
+$ testcafe -c 2 chrome:headless mi_Cuenta.js -f "Prueba a ejecutar"
+
+
+testcafe firefox,chrome:headless mi_Cuenta.js --reporter html:reportes/reporte.html
+
+Para hacer ejecuciones en modo privado o incognito podemos usar cualquiera de estas dos lineas
+$ testcafe -c 2 "chrome -private" mi_Cuenta.js
+$ testcafe -c 2 "chrome -incognito" mi_Cuenta.js
+
+Si queremos ejecutar el script de una forma remota, ejecutamos este link y entonces tenemos una URL, la cual ponemos en otro dispositivo y corre entonces en el otro dispositivo
+$ testcafe remote mi_Cuenta.js
+
+Si queremos hacer lo mismo pero que nos mande un qr para desde ahi leer la URL entonces hagamos lo siguiente
+$ testcafe remote mi_Cuenta.js --qr-code
+
+En chrome podemos abrir el "Toogle devide toolbar" (o presionar Ctrl+Shift+M), aqui podemos ver que dispositivos podemos emular y entonces ejecutar Testcafe emulando algun dispositivo
+$ testcafe "chrome:emulation:device=iphone X" mi_Cuenta.js
+$ testcafe "chrome:emulation:device=Galaxy S5" mi_Cuenta.js
+$ testcafe "chrome:emulation:device=iPad" mi_Cuenta.js
+
+en la pagina siguiente podemos ver una lista de todos los dispositivos que pueden ser usados apra virtualizar
+https://github.com/DevExpress/device-specs/blob/master/viewport-sizes.json
+
+
+Tambien se puede hacer mediante el alto y ancho de la pantalla
+$ testcafe "chrome:emulation:width=640;height=360;mobile=true;orientation=vertical;touch=true" mi_Cuenta.js
+
+$ testcafe "chrome:emulation:width=100;height=200;mobile=true;orientation=horizontal;touch=true" mi_Cuenta.js
+
+Para hacer que desde el incio la pantalla este maximizada podemos usar este comando
+$ testcafe "chrome --start-fullscreen" mi_Cuenta.js
+
+Para acceder al modo Life en testcafe podemos usar la siguiente experesion, la idesa del modo life es que puedes ir corriendo las pruebas la mismo tiempo y cambiar los parametros de la prueba
+Ctrl+S stop the test run
+Ctrl+R restarts the test run
+Ctrl+W 
+
+$ testcafe chrome mi_Cuenta.js -L

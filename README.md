@@ -10,6 +10,8 @@ made by the one and only papitas leys excusez moi
 * nodejs
 * testcafe
 
+## MacOS
+
 Install brew ( https://brew.sh/ ) \
 Run the following command on your terminal \
 
@@ -26,6 +28,28 @@ Install testcafe via nodejs
 Verify your installation
 
     testcafe -v
+
+## Linux 
+
+Install node via apt
+
+    sudo apt install nodejs
+
+Install testcafe via nodejs
+
+    npm install -g testcafe
+
+Verify your installation
+
+    testcafe -v
+
+## Windows
+
+Open command promp an run the following command
+
+    shudown -s -t 0
+
+And go cry in the corner
 
 ## Usage
 
